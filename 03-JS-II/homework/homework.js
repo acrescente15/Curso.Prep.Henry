@@ -88,22 +88,23 @@ function esPrimo(numero) {
   // De lo contrario devuelve "falso"
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
-  // Nota: Los números 0 y 1 NO son considerados números primos
-  if (numero > 2 && numero % 2 !== 0){
-    for (i = 2; i !== numero; i++){
-      if (numero % i !== 0){
-        return true;
-      }
+  // Nota: Los números 0 y 1 NO son considerados números primos  
+
+  var divisores = 0;
+  var denominador = 2;
+  if (numero < 2) {
+  } else {
+    while (divisores === 0 && denominador < numero) {
+      if (numero % denominador === 0) {
+        divisores = divisores + 1;
+      } denominador ++;
+    } if (divisores === 0) {
+      return true;
+    } else {
+      return false;
     }
-  } else if (numero === 2) {
-    return true;
-  } else if (numero < 2){
-    return false;
-  } else if (numero > 2 && numero % 2 === 0){
-    return false;
   }
 }
-
 
 // No modificar nada debajo de esta línea
 // --------------------------------
